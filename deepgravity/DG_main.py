@@ -178,7 +178,7 @@ def evaluate():
     cpc_df = cpc_from_num(edf, oa2tile, o2d2flow)
     print('Average CPC of test tiles: {cpc_df.cpc.mean():.4f}  stdev: {cpc_df.cpc.std():.4f}')
 
-    fname = './results/tile2cpc_{}_{}.csv'.format(model_type, args.dataset)
+    fname = '../../results/tile2cpc_{}_{}.csv'.format(model_type, args.dataset) #path where file is saved ###############
 
     cpc_df.to_csv(fname, index=False)
 
@@ -258,7 +258,7 @@ if args.mode == 'train':
     t1 = time.time()
     print("Total training time: %s seconds" % (t1 - t0))
 
-    fname = './results/model_{}_{}.pt'.format(model_type, args.dataset)
+    fname = '../../results/model_{}_{}.pt'.format(model_type, args.dataset) #path where saved #########################
     print('Saving model to {} ...'.format(fname))
     torch.save({'model_state_dict': model.state_dict(),
                 'optimizer_state_dict': optimizer.state_dict()
